@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Daong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div><img src="" alt="Kopi Daong" height="30"></div>
+    <nav>
+      <ul>
+        <li><a href="#">Tentang</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="slider" id="slider">
+    <div class="slide">
+      <div class="slide-content">
+        <h1>Selamat Datang di Kopi Daong</h1>
+        <p>Nikmati secangkir kopi pilihan dengan suasana alam yang sejuk dan asri. </p>
+      </div>
+      <img src="" alt="Coffee Cup">
+    </div>
+    <div class="slide">
+      <div class="slide-content">
+        <h1>100% Kopi Indonesia</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur velit perferendis minus repudiandae sunt dicta, 
+        <br>adipisci voluptatum maiores nobis, asperiores praesentium sed unde eveniet necessitatibus est ab. Accusantium, soluta debitis.</p>
+      </div>
+      <img src="" alt="Coffee Cup">
+    </div>
+  </div>
+
+  <button class="arrow left" onclick="prevSlide()">❮</button>
+  <button class="arrow right" onclick="nextSlide()">❯</button>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      const offset = -index * 100;
+      slides.forEach(slide => {
+        slide.style.transform = `translateX(${offset}%)`;
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
+</body>
+</html>

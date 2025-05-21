@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #d8edd6;
+  color: #1f4d37;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #d8edd6;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 90px;
+}
+
+nav ul li {
+  font-weight: bold;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  max-height: 500px; /* Dari 350px → 450px atau lebih */
+  width: auto;
+  flex-shrink: 0;
+  
+}
+
+.slide {
+  min-width: 100%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 90px;
+}
+
+.slide-content h1 {
+  font-size: 60px;
+  color: #1c5c3f;
+}
+
+.slide-content p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #a6a840;
+}
+
+.slide img {
+  max-height: 350px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
